@@ -362,25 +362,14 @@ html_dependency_sweetalert2 <- function(theme = c("sweetalert2",
 # Non exported ------------------------------------------------------------
 
 html_dependency_picker_bs <- function(theme) {
-  if (identical(bslib::theme_version(theme), "5")) {
-    htmlDependency(
-      name = "bootstrap-select",
-      version = "1.14.0-3",
-      package = "shinyWidgets",
-      src = c(href = "shinyWidgets/bootstrap-select-1.14.0-beta2", file = "assets/bootstrap-select-1.14.0-beta2"),
-      script = c("js/bootstrap-select.min.js"),
-      stylesheet = c("css/bootstrap-select.min.css")
-    )
-  } else {
-    htmlDependency(
-      name = "bootstrap-select",
-      version = "1.13.8",
-      package = "shinyWidgets",
-      src = c(href = "shinyWidgets/bootstrap-select", file = "assets/bootstrap-select"),
-      script = c("js/bootstrap-select.min.js"),
-      stylesheet = c("css/bootstrap-select.min.css")
-    )
-  }
+  htmlDependency(
+    name = "bootstrap-select",
+    version = "1.14.0-3",
+    package = "shinyWidgets",
+    src = c(href = "shinyWidgets/bootstrap-select-1.14.0-beta2", file = "assets/bootstrap-select-1.14.0-beta2"),
+    script = c("js/bootstrap-select.min.js"),
+    stylesheet = c("css/bootstrap-select.min.css")
+  )
 }
 html_dependency_picker <- function() {
   bslib::bs_dependency_defer(html_dependency_picker_bs)
